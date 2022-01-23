@@ -114,7 +114,9 @@
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				1
+				1,
+				2,
+				3
 			]
 		}
 	],
@@ -129,6 +131,16 @@
 		{
 			"backtrace" : 1,
 			"path" : "include/tools.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/metadata_node.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/metadata_system.h",
 			"sourceGroupIndex" : 1
 		}
 	],

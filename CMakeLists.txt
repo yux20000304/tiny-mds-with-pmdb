@@ -10,9 +10,9 @@ set(src src)
 
 add_library(socket src/socket.cpp src/tools.cpp)
 
-add_library(filesystem src/file_system.cpp src/metadata_server.cpp src/tools.cpp)
+add_library(filesystem src/file_system.cpp src/metadata_server.cpp src/tools.cpp src/metadata_system.cpp)
 
-add_executable(client src/client.cpp include/tools.h)
+add_executable(client src/client.cpp include/tools.h include/metadata_node.h include/metadata_system.h)
 
 add_executable(server src/server.cpp include/tools.h)
 

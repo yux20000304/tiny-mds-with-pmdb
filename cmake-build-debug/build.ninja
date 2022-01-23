@@ -132,6 +132,13 @@ build CMakeFiles/filesystem.dir/src/tools.cpp.o: CXX_COMPILER__filesystem_Debug 
   OBJECT_DIR = CMakeFiles/filesystem.dir
   OBJECT_FILE_DIR = CMakeFiles/filesystem.dir/src
 
+build CMakeFiles/filesystem.dir/src/metadata_system.cpp.o: CXX_COMPILER__filesystem_Debug /home/yyx/文档/tiny_metadata_server/src/metadata_system.cpp || cmake_object_order_depends_target_filesystem
+  DEP_FILE = CMakeFiles/filesystem.dir/src/metadata_system.cpp.o.d
+  FLAGS = -std=c++11 -g
+  INCLUDES = -I/home/yyx/文档/tiny_metadata_server/include
+  OBJECT_DIR = CMakeFiles/filesystem.dir
+  OBJECT_FILE_DIR = CMakeFiles/filesystem.dir/src
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target filesystem
@@ -140,7 +147,7 @@ build CMakeFiles/filesystem.dir/src/tools.cpp.o: CXX_COMPILER__filesystem_Debug 
 #############################################
 # Link the static library libfilesystem.a
 
-build libfilesystem.a: CXX_STATIC_LIBRARY_LINKER__filesystem_Debug CMakeFiles/filesystem.dir/src/file_system.cpp.o CMakeFiles/filesystem.dir/src/metadata_server.cpp.o CMakeFiles/filesystem.dir/src/tools.cpp.o
+build libfilesystem.a: CXX_STATIC_LIBRARY_LINKER__filesystem_Debug CMakeFiles/filesystem.dir/src/file_system.cpp.o CMakeFiles/filesystem.dir/src/metadata_server.cpp.o CMakeFiles/filesystem.dir/src/tools.cpp.o CMakeFiles/filesystem.dir/src/metadata_system.cpp.o
   LANGUAGE_COMPILE_FLAGS = -std=c++11 -g
   OBJECT_DIR = CMakeFiles/filesystem.dir
   POST_BUILD = :
