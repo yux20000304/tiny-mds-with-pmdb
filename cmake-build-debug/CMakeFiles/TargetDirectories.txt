@@ -1,0 +1,6 @@
+/home/yyx/文档/tiny_metadata_server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/yyx/文档/tiny_metadata_server/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/yyx/文档/tiny_metadata_server/cmake-build-debug/CMakeFiles/socket.dir
+/home/yyx/文档/tiny_metadata_server/cmake-build-debug/CMakeFiles/filesystem.dir
+/home/yyx/文档/tiny_metadata_server/cmake-build-debug/CMakeFiles/server.dir
+/home/yyx/文档/tiny_metadata_server/cmake-build-debug/CMakeFiles/client.dir
