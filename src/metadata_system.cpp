@@ -156,4 +156,7 @@ void MetadataSystem::update(const vector<string>& args, string& feedback)
     }
 }
 
+MetadataSystem* MetadataSystem::GetClassType(void) {
+    return this;
+}
 

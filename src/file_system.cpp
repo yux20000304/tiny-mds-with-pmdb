@@ -19,6 +19,10 @@ FileSystem::~FileSystem() {
     delete file_structure_;
 }
 
+FileSystem* FileSystem::GetClassType(void) {
+    return this;
+}
+
 void FileSystem::pwd(const vector<string>& command_args, string& feedback) {
     file_structure_->GetCurrentDirectory(feedback);
 }

@@ -20,6 +20,7 @@ public:
     explicit MetadataSystem(MetadataServer* owner);
     ~MetadataSystem();
     void ExecuteCommand(const std::vector<std::string>& command_args, std::string& feedback) override;
+    MetadataSystem* GetClassType(void);
 
 private:
     MetadataServer* owner_;

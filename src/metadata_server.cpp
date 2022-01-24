@@ -309,6 +309,9 @@ bool MetadataServer::RecoverSlave(int slave_id) {
 
         argv = SplitString(received_message);
         inner_system->ExecuteCommand(argv, message);
+        if(typeid(*(inner_system->GetClassType()))== typeid(FileSystem)){
+            print("cache");
+        }
         if (message.empty()) {
             message = "[EMPTY]";
         }

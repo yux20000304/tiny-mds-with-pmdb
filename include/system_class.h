@@ -12,6 +12,9 @@
 class SystemClass {
 public:
     virtual void ExecuteCommand(const std::vector<std::string>& command_args, std::string& feedback) = 0;
+    SystemClass* GetClassType(void){
+        return this;
+    }
 };
 
 #endif //TINY_METADATA_SERVER_SYSTEM_CLASS_H
