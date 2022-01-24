@@ -35,6 +35,8 @@ private:
     void rm(const std::vector<std::string>& command_args, std::string& feedback);
     void touch(const std::vector<std::string>& command_args, std::string& feedback);
     void serverstats(const std::vector<std::string>& command_args, std::string& feedback);
+
+    FileSystem *GetClassType(void);
 };
 
 class FileStructure
@@ -50,6 +52,7 @@ public:
     void Touch(const std::string &path, std::string &feedback);
     void State(const std::string &path, std::string &feedback);
     void Remove(const std::string &path, bool recursive_flag, std::string &feedback);
+
 
 private:
     class FileNode {
