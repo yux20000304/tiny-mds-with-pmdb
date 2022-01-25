@@ -1,0 +1,11 @@
+# ninja log v5
+0	262	1642920606897394180	CMakeFiles/socket.dir/src/socket.cpp.o	f4c8d07aaf9d5f72
+1	167	1642920606801397562	CMakeFiles/socket.dir/src/tools.cpp.o	37e0bcd21a37f88f
+262	267	1642920606901394039	libsocket.a	81a3aeac8062ba51
+1	262	1642920606897394180	CMakeFiles/server.dir/src/server.cpp.o	3b1513e87fa8452c
+1	497	1642920607129386007	CMakeFiles/filesystem.dir/src/metadata_server.cpp.o	93a1d761abd865f
+497	507	1642920607141385585	libfilesystem.a	c0f340a8304d7bc
+1	175	1642920606809397280	CMakeFiles/filesystem.dir/src/tools.cpp.o	9893a3e5562c5151
+1	388	1642920607021389811	CMakeFiles/filesystem.dir/src/metadata_system.cpp.o	dee6b1516db464ad
+1	418	1642920607053388684	CMakeFiles/filesystem.dir/src/file_system.cpp.o	d7543d868c67810
+507	554	1642920607189383893	server	38024adb9cea0c8f

@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libsocket.a"
+			"path" : "libfilesystem.a"
 		}
 	],
 	"backtrace" : 1,
@@ -12,7 +12,7 @@
 		"commands" : 
 		[
 			"add_library",
-			"INCLUDE_DIRECTORIES"
+			"include_directories"
 		],
 		"files" : 
 		[
@@ -26,13 +26,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 11,
+				"line" : 22,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 7,
+				"line" : 16,
 				"parent" : 0
 			}
 		]
@@ -57,13 +57,15 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				1,
+				2,
+				3
 			]
 		}
 	],
-	"id" : "socket::@6890427a1f51a3e7e1df",
-	"name" : "socket",
-	"nameOnDisk" : "libsocket.a",
+	"id" : "filesystem::@6890427a1f51a3e7e1df",
+	"name" : "filesystem",
+	"nameOnDisk" : "libfilesystem.a",
 	"paths" : 
 	{
 		"build" : ".",
@@ -76,7 +78,9 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				1,
+				2,
+				3
 			]
 		}
 	],
@@ -85,13 +89,25 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/socket.cpp",
+			"path" : "src/file_system.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/metadata_server.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/tools.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/metadata_system.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
