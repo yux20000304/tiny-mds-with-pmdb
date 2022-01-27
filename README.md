@@ -1,5 +1,5 @@
-# tiny_metadata_server
-***
+# tiny-mds-with-pmdb
+
 ## Abstract
 - 这是我的本科毕业设计代码仓库
 - 我的毕设选题是基于非忆失性存储的元数据缓存设计

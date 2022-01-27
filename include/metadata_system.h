@@ -21,15 +21,19 @@ public:
     explicit MetadataSystem(MetadataServer* owner);
     ~MetadataSystem();
     void ExecuteCommand(const std::vector<std::string>& command_args, std::string& feedback) override;
-    void InitKVengine(const std::string &poolpath);
+    void InitKVengine();
     void PutMetadataCache(std::string& key, std::string& value);
     void GetMetadataCache(std::string& key, std::string& value);
     void RemoveMetadataCache(std::string& key);
     MetadataSystem* GetClassType(void);
+    void setPoolname(const std::string &poolname);
 
 private:
     MetadataServer* owner_;
     std::map<int, MetadataNode*> metadata_map_;
+    std::string poolname;
+
+private:
     pmem::kv::db kv;
     pmem::kv::config cfg;
     pmem::kv::status s;

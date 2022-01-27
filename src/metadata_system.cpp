@@ -30,7 +30,6 @@ using namespace std;
 
 
 MetadataSystem::MetadataSystem(MetadataServer* owner): metadata_map_(), owner_(owner) {
-    InitKVengine("./example.poolset");
 }
 
 MetadataSystem::~MetadataSystem() {
@@ -165,7 +164,7 @@ void MetadataSystem::create(const vector<string>& args, std::string& feedback) {
 //    s = it.seek_to_first();
 //    ASSERT(s == pmem::kv::status::OK);
     kv.get_all([](pmem::kv::string_view k, pmem::kv::string_view v) {
-        LOG("  visited: " << k.data() << v.data());
+        LOG("  cache item : " << k.data() << " " << v.data());
         return 0;
     });
 }
@@ -222,9 +221,9 @@ MetadataSystem* MetadataSystem::GetClassType(void) {
     return this;
 }
 
-void MetadataSystem::InitKVengine(const string &poolpath) {
+void MetadataSystem::InitKVengine() {
     LOG("Creating config");
-    s = cfg.put_path(poolpath);
+    s = cfg.put_path(poolname+".poolset");
     ASSERT(s == pmem::kv::status::OK);
     s = cfg.put_size(SIZE);
     ASSERT(s == pmem::kv::status::OK);
@@ -253,4 +252,8 @@ void MetadataSystem::RemoveMetadataCache(std::string &key) {
     LOG("Removing existing key");
     s = kv.remove(key);
     ASSERT(s == pmem::kv::status::OK);
+}
+
+void MetadataSystem::setPoolname(const string &poolname) {
+    MetadataSystem::poolname = poolname;
 }

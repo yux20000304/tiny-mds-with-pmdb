@@ -160,6 +160,9 @@ void MetadataServer::Run() {
     }
     else {
         inner_system = new MetadataSystem(this);
+        MetadataSystem* temp_p = dynamic_cast<MetadataSystem *>(inner_system);
+        temp_p->setPoolname(to_string(self_slave_id_));
+        temp_p->InitKVengine();
     }
     Run(inner_system);
 }
