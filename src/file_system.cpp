@@ -632,7 +632,7 @@ void FileStructure::RecursiveListObjects(const FileNode * const start_node, vect
 }
 
 void FileStructure::RecursiveRemoveChildren(FileNode *start_node, string &feedback) {
-    for(int i = 0; i < start_node->get_children().size(); ++i) {
+    for(int i = 0; i < start_node->get_children().size(); ) {
         RecursiveRemoveChildren(start_node->get_children()[i], feedback);
         start_node->RemoveChild(i, feedback);
     }

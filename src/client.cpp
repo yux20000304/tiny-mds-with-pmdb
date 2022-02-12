@@ -10,6 +10,8 @@
 #include <getopt.h>
 #include <iostream>
 #include <string>
+#include <sys/time.h>
+
 
 #define BufferSize 1024
 
@@ -85,6 +87,12 @@ int main(int argc, char *argv[])
                 break;
             else {
                 string message(buffer);
+                struct timeval start,stop,diff;
+                memset(&start,0,sizeof(struct timeval));
+                memset(&stop,0,sizeof(struct timeval));
+                memset(&diff,0,sizeof(struct timeval));
+                gettimeofday(&start,0);
+
                 if (!connection_socket.SendMessage(message)) {
                     connection_socket = ClientSocket(master_address, master_port);
                     continue;
@@ -97,6 +105,9 @@ int main(int argc, char *argv[])
                 if (tmp_message != "[EMPTY]") {
                     cout << tmp_message;
                 }
+                gettimeofday(&stop,0);
+                time_substract(&diff,&start,&stop);
+                printf("command time : %d s,%d us\n",(int)diff.tv_sec,(int)diff.tv_usec);
             }
         }
     }

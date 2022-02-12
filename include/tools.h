@@ -15,4 +15,6 @@ std::vector<std::string> SplitString(const std::string &in_string, const std::st
 
 void Error(const char* message);
 
+int  time_substract(struct timeval *result, struct timeval *begin,struct timeval *end);
+
 #endif //TINY_METADATA_SERVER_TOOLS_H

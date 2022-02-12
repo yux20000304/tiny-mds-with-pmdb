@@ -1,4 +1,0 @@
-/snap/clion/178/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/178/bin/ninja/linux/ninja -G Ninja /home/yyx/文档/tiny_metadata_server
--- Configuring done
--- Generating done
--- Build files have been written to: /home/yyx/文档/tiny_metadata_server/cmake-build-debug
