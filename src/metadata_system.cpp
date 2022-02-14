@@ -221,6 +221,9 @@ MetadataSystem* MetadataSystem::GetClassType(void) {
 
 void MetadataSystem::InitKVengine() {
     LOG("Creating config");
+
+//    s = cfg.put_path("/dev/shm/" + poolname+".poolset");
+
     s = cfg.put_path(poolname+".poolset");
     ASSERT(s == pmem::kv::status::OK);
     s = cfg.put_size(SIZE);
