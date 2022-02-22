@@ -245,7 +245,7 @@ void MetadataSystem::PutMetadataCache(string& key, string& value) {
 
 void MetadataSystem::GetMetadataCache(string &key, string &value) {
     LOG("Reading key back");
-    s = kv.get("key1", &value);
+    s = kv.get(key, &value);
     ASSERT(s == pmem::kv::status::OK );
 }
 
