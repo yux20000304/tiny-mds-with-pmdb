@@ -157,14 +157,6 @@ void MetadataSystem::create(const vector<string>& args, std::string& feedback) {
     string temp = args[2] + " " + args[3] + " " + args[4] + " " + args[5] + " " + args[6] + " " + args[7];
     PutMetadataCache(const_cast<string &>(args[1]), temp);
     feedback = "Success";
-//    auto res_it = kv.new_read_iterator();
-//    ASSERT(res_it.is_ok());
-//    auto &it = res_it.get_value();
-//    LOG("Iterate from first to last element");
-//    kv.get_all([](pmem::kv::string_view k, pmem::kv::string_view v) {
-//        LOG("  cache item : " << k.data() << " " << v.data());
-//        return 0;
-//    });
 }
 
 void MetadataSystem::update(const vector<string>& args, std::string& feedback)

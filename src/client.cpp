@@ -30,6 +30,8 @@ void PrintHelp() {
 }
 
 
+
+
 int main(int argc, char *argv[])
 {
     string master_address;
@@ -84,50 +86,91 @@ int main(int argc, char *argv[])
 
     char buffer[BufferSize];
     ifstream in(input_file_path);
-    while (true) {
-        string in_string;
-        if (opt_flags[2]){
-            if(!getline(in, in_string)){
+    string in_string;
+
+    //read from file
+    if (opt_flags[2]){
+
+        struct timeval start, stop, diff;
+        memset(&start, 0, sizeof(struct timeval));
+        memset(&stop, 0, sizeof(struct timeval));
+        memset(&diff, 0, sizeof(struct timeval));
+        gettimeofday(&start, 0);
+
+        while (true) {
+            if (!getline(in, in_string)) {
                 break;
             }
-        } else {
+            vector <string> commands;
+            commands = SplitString(in_string);
+            if (commands.empty())
+                continue;
+            else {
+                if (commands[0] == "exit" or commands[0] == "quit" or commands[0] == "q")
+                    break;
+                else {
+                    string message(in_string);
+                    if (!connection_socket.SendMessage(message)) {
+                        connection_socket = ClientSocket(master_address, master_port);
+                        continue;
+                    }
+                    string tmp_message;
+                    if (!connection_socket.GetMessage(tmp_message)) {
+                        connection_socket = ClientSocket(master_address, master_port);
+                        continue;
+                    }
+
+                    if (tmp_message != "[EMPTY]") {
+//                        cout << tmp_message;
+                    }
+                }
+            }
+        }
+
+        gettimeofday(&stop, 0);
+        time_substract(&diff, &start, &stop);
+        printf("command time : %d s,%d us\n", (int) diff.tv_sec, (int) diff.tv_usec);
+    }
+    //read from commandline
+//    else{
+        while (true) {
             cout << "> ";
             bzero(buffer, BufferSize);
             fgets(buffer, BufferSize - 1, stdin);
             in_string = string(buffer);
-        }
-        vector<string> commands;
-        commands = SplitString(in_string);
-        if (commands.empty())
-            continue;
-        else {
-            if (commands[0] == "exit" or commands[0] == "quit" or commands[0] == "q")
-                break;
-            else {
-                string message(in_string);
-                struct timeval start,stop,diff;
-                memset(&start,0,sizeof(struct timeval));
-                memset(&stop,0,sizeof(struct timeval));
-                memset(&diff,0,sizeof(struct timeval));
-                gettimeofday(&start,0);
 
-                if (!connection_socket.SendMessage(message)) {
-                    connection_socket = ClientSocket(master_address, master_port);
-                    continue;
+            vector <string> commands;
+            commands = SplitString(in_string);
+            if (commands.empty())
+                continue;
+            else {
+                if (commands[0] == "exit" or commands[0] == "quit" or commands[0] == "q")
+                    break;
+                else {
+                    string message(in_string);
+                    struct timeval start, stop, diff;
+                    memset(&start, 0, sizeof(struct timeval));
+                    memset(&stop, 0, sizeof(struct timeval));
+                    memset(&diff, 0, sizeof(struct timeval));
+                    gettimeofday(&start, 0);
+                    if (!connection_socket.SendMessage(message)) {
+                        connection_socket = ClientSocket(master_address, master_port);
+                        continue;
+                    }
+                    string tmp_message;
+                    if (!connection_socket.GetMessage(tmp_message)) {
+                        connection_socket = ClientSocket(master_address, master_port);
+                        continue;
+                    }
+                    if (tmp_message != "[EMPTY]") {
+                        cout << tmp_message;
+                    }
+                    gettimeofday(&stop, 0);
+                    time_substract(&diff, &start, &stop);
+                    printf("command time : %d s,%d us\n", (int) diff.tv_sec, (int) diff.tv_usec);
                 }
-                string tmp_message;
-                if (!connection_socket.GetMessage(tmp_message)) {
-                    connection_socket = ClientSocket(master_address, master_port);
-                    continue;
-                }
-                if (tmp_message != "[EMPTY]") {
-                    cout << tmp_message;
-                }
-                gettimeofday(&stop,0);
-                time_substract(&diff,&start,&stop);
-                printf("command time : %d s,%d us\n",(int)diff.tv_sec,(int)diff.tv_usec);
             }
         }
-    }
+//    }
     return 0;
 }
