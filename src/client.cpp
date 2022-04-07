@@ -99,12 +99,16 @@ int main(int argc, char *argv[])
 
         while (true) {
             if (!getline(in, in_string)) {
+//                gettimeofday(&stop, 0);
+//                time_substract(&diff, &start, &stop);
+//                printf("throughput time : %d s,%d us\n", (int) diff.tv_sec, (int) diff.tv_usec);
                 break;
             }
             vector <string> commands;
             commands = SplitString(in_string);
-            if (commands.empty())
+            if (commands.empty()){
                 continue;
+            }
             else {
                 if (commands[0] == "exit" or commands[0] == "quit" or commands[0] == "q")
                     break;
@@ -126,10 +130,10 @@ int main(int argc, char *argv[])
                 }
             }
         }
-
         gettimeofday(&stop, 0);
         time_substract(&diff, &start, &stop);
-        printf("command time : %d s,%d us\n", (int) diff.tv_sec, (int) diff.tv_usec);
+        printf("latency time : %d s,%d us\n", (int) diff.tv_sec, (int) diff.tv_usec);
+
     }
     //read from commandline
 //    else{

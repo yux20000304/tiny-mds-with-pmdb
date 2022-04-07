@@ -1,0 +1,8 @@
+/home/yyx/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/yyx/projects/tiny-mds-with-pmdb
+-- Checking for module 'libpmemkv'
+--   Found libpmemkv, version 1.5.0
+-- Checking for module 'libpmemobj++>=1.9'
+--   Found libpmemobj++, version 1.13.0
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug

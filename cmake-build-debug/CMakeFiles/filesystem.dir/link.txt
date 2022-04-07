@@ -1,0 +1,2 @@
+/usr/bin/ar qc libfilesystem.a CMakeFiles/filesystem.dir/src/file_system.cpp.o CMakeFiles/filesystem.dir/src/metadata_server.cpp.o CMakeFiles/filesystem.dir/src/tools.cpp.o CMakeFiles/filesystem.dir/src/metadata_system.cpp.o
+/usr/bin/ranlib libfilesystem.a

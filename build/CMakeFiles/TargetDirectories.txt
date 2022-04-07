@@ -1,0 +1,6 @@
+/home/yyx/projects/tiny-mds-with-pmdb/build/CMakeFiles/socket.dir
+/home/yyx/projects/tiny-mds-with-pmdb/build/CMakeFiles/filesystem.dir
+/home/yyx/projects/tiny-mds-with-pmdb/build/CMakeFiles/client.dir
+/home/yyx/projects/tiny-mds-with-pmdb/build/CMakeFiles/server.dir
+/home/yyx/projects/tiny-mds-with-pmdb/build/CMakeFiles/edit_cache.dir
+/home/yyx/projects/tiny-mds-with-pmdb/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++ -std=c++11 -g -rdynamic CMakeFiles/client.dir/src/client.cpp.o -o client  libsocket.a -lpmemkv -lpthread 
