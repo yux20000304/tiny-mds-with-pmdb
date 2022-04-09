@@ -27,6 +27,50 @@
 					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="pmdb">
+				<Option output="/home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug/pmdb" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/yyx/projects/tiny-mds-with-pmdb/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug/Makefile&quot;  VERBOSE=1 pmdb"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pmdb/fast">
+				<Option output="/home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug/pmdb" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/yyx/projects/tiny-mds-with-pmdb/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug/Makefile&quot;  VERBOSE=1 pmdb/fast"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug"/>
 				<Option type="4"/>
@@ -217,10 +261,14 @@
 		<Unit filename="/home/yyx/projects/tiny-mds-with-pmdb/include/metadata_node.h">
 			<Option target="client"/>
 		</Unit>
+		<Unit filename="/home/yyx/projects/tiny-mds-with-pmdb/include/metadata_server.h">
+			<Option target="pmdb"/>
+		</Unit>
 		<Unit filename="/home/yyx/projects/tiny-mds-with-pmdb/include/metadata_system.h">
 			<Option target="client"/>
 		</Unit>
 		<Unit filename="/home/yyx/projects/tiny-mds-with-pmdb/include/tools.h">
+			<Option target="pmdb"/>
 			<Option target="server"/>
 			<Option target="client"/>
 		</Unit>
@@ -235,6 +283,9 @@
 		</Unit>
 		<Unit filename="/home/yyx/projects/tiny-mds-with-pmdb/src/metadata_system.cpp">
 			<Option target="filesystem"/>
+		</Unit>
+		<Unit filename="/home/yyx/projects/tiny-mds-with-pmdb/src/pmdbserver.cpp">
+			<Option target="pmdb"/>
 		</Unit>
 		<Unit filename="/home/yyx/projects/tiny-mds-with-pmdb/src/server.cpp">
 			<Option target="server"/>

@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named pmdb
+
+# Build rule for target.
+pmdb: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pmdb
+.PHONY : pmdb
+
+# fast build rule for target.
+pmdb/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pmdb.dir/build.make CMakeFiles/pmdb.dir/build
+.PHONY : pmdb/fast
+
+#=============================================================================
 # Target rules for targets named socket
 
 # Build rule for target.
@@ -264,6 +277,30 @@ src/metadata_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/filesystem.dir/build.make CMakeFiles/filesystem.dir/src/metadata_system.cpp.s
 .PHONY : src/metadata_system.cpp.s
 
+src/pmdbserver.o: src/pmdbserver.cpp.o
+.PHONY : src/pmdbserver.o
+
+# target to build an object file
+src/pmdbserver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pmdb.dir/build.make CMakeFiles/pmdb.dir/src/pmdbserver.cpp.o
+.PHONY : src/pmdbserver.cpp.o
+
+src/pmdbserver.i: src/pmdbserver.cpp.i
+.PHONY : src/pmdbserver.i
+
+# target to preprocess a source file
+src/pmdbserver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pmdb.dir/build.make CMakeFiles/pmdb.dir/src/pmdbserver.cpp.i
+.PHONY : src/pmdbserver.cpp.i
+
+src/pmdbserver.s: src/pmdbserver.cpp.s
+.PHONY : src/pmdbserver.s
+
+# target to generate assembly for a file
+src/pmdbserver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pmdb.dir/build.make CMakeFiles/pmdb.dir/src/pmdbserver.cpp.s
+.PHONY : src/pmdbserver.cpp.s
+
 src/server.o: src/server.cpp.o
 .PHONY : src/server.o
 
@@ -349,6 +386,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... client"
 	@echo "... filesystem"
+	@echo "... pmdb"
 	@echo "... server"
 	@echo "... socket"
 	@echo "... src/client.o"
@@ -363,6 +401,9 @@ help:
 	@echo "... src/metadata_system.o"
 	@echo "... src/metadata_system.i"
 	@echo "... src/metadata_system.s"
+	@echo "... src/pmdbserver.o"
+	@echo "... src/pmdbserver.i"
+	@echo "... src/pmdbserver.s"
 	@echo "... src/server.o"
 	@echo "... src/server.i"
 	@echo "... src/server.s"

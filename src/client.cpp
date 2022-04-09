@@ -125,7 +125,7 @@ int main(int argc, char *argv[])
                     }
 
                     if (tmp_message != "[EMPTY]") {
-//                        cout << tmp_message;
+                        cout << tmp_message;
                     }
                 }
             }

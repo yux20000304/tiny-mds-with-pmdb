@@ -50,4 +50,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/filesystem.dir/DependInfo.cmake"
   "CMakeFiles/client.dir/DependInfo.cmake"
   "CMakeFiles/server.dir/DependInfo.cmake"
+  "CMakeFiles/pmdb.dir/DependInfo.cmake"
   )

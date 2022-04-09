@@ -63,6 +63,7 @@ CMAKE_BINARY_DIR = /home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/pmdb.dir/all
 all: CMakeFiles/socket.dir/all
 all: CMakeFiles/filesystem.dir/all
 all: CMakeFiles/server.dir/all
@@ -74,11 +75,38 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/pmdb.dir/clean
 clean: CMakeFiles/socket.dir/clean
 clean: CMakeFiles/filesystem.dir/clean
 clean: CMakeFiles/server.dir/clean
 clean: CMakeFiles/client.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/pmdb.dir
+
+# All Build rule for target.
+CMakeFiles/pmdb.dir/all: CMakeFiles/socket.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pmdb.dir/build.make CMakeFiles/pmdb.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pmdb.dir/build.make CMakeFiles/pmdb.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug/CMakeFiles --progress-num=8,9 "Built target pmdb"
+.PHONY : CMakeFiles/pmdb.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/pmdb.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/pmdb.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/pmdb.dir/rule
+
+# Convenience name for target.
+pmdb: CMakeFiles/pmdb.dir/rule
+.PHONY : pmdb
+
+# clean rule for target.
+CMakeFiles/pmdb.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pmdb.dir/build.make CMakeFiles/pmdb.dir/clean
+.PHONY : CMakeFiles/pmdb.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/socket.dir
@@ -87,7 +115,7 @@ clean: CMakeFiles/client.dir/clean
 CMakeFiles/socket.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/socket.dir/build.make CMakeFiles/socket.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/socket.dir/build.make CMakeFiles/socket.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug/CMakeFiles --progress-num=10,11,12 "Built target socket"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug/CMakeFiles --progress-num=12,13,14 "Built target socket"
 .PHONY : CMakeFiles/socket.dir/all
 
 # Build rule for subdir invocation for target.
@@ -140,7 +168,7 @@ CMakeFiles/server.dir/all: CMakeFiles/socket.dir/all
 CMakeFiles/server.dir/all: CMakeFiles/filesystem.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug/CMakeFiles --progress-num=8,9 "Built target server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yyx/projects/tiny-mds-with-pmdb/cmake-build-debug/CMakeFiles --progress-num=10,11 "Built target server"
 .PHONY : CMakeFiles/server.dir/all
 
 # Build rule for subdir invocation for target.

@@ -49,6 +49,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/pmdb.dir/DependInfo.cmake"
   "CMakeFiles/socket.dir/DependInfo.cmake"
   "CMakeFiles/filesystem.dir/DependInfo.cmake"
   "CMakeFiles/server.dir/DependInfo.cmake"

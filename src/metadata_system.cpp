@@ -224,7 +224,7 @@ void MetadataSystem::InitKVengine() {
     ASSERT(s == pmem::kv::status::OK);
 
     LOG("Opening pmemkv database with 'cmap' engine");
-    s = kv.open("cmap", std::move(cfg));
+    s = kv.open("radix", std::move(cfg));
     ASSERT(s == pmem::kv::status::OK);
 
 }

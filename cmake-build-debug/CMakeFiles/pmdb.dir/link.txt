@@ -1,0 +1,1 @@
+/usr/bin/c++ -std=c++11 -g -rdynamic CMakeFiles/pmdb.dir/src/pmdbserver.cpp.o -o pmdb  libsocket.a 

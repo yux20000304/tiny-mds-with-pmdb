@@ -25,6 +25,10 @@ add_executable(client src/client.cpp include/tools.h include/metadata_node.h inc
 
 add_executable(server src/server.cpp include/tools.h)
 
+add_executable(pmdb src/pmdbserver.cpp include/tools.h include/metadata_server.h)
+
+target_link_libraries(pmdb socket)
+
 target_link_libraries(client socket ${LIBPMEMKV_LIBRARIES} pthread)
 
 target_link_libraries(server filesystem socket ${LIBPMEMKV_LIBRARIES} pthread)
