@@ -17,4 +17,3 @@
 2. open a slave proc and connect to master: ``` ./server -s8081 -i127.0.0.1 -p8080 ```
 3. open a client proc: ``` ./client -i127.0.0.1 -p8080 ```
 
-Then you can type commands in client, and the master node will send the metadata to the slaves.
